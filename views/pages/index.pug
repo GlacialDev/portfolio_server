@@ -1,0 +1,68 @@
+extends ../template
+
+block variables
+  - var isBlog = false
+
+block content
+  .intro__wrap
+    canvas.intro__canvas
+    header.intro__header 
+      a.intro__authorize-btn Авторизоваться
+    .intro__flip
+      .intro__flip.intro__flip--front
+        .profile.profile--intro
+          .profile__image
+          .profile__name Клименко Иван
+          .profile__desc Личный сайт веб разработчика
+          .profile__socials.socials
+            ul.socials__list
+              li.socials__item
+                a(href="https://vk.com/kleverion").socials__link
+                  svg.socials__icon
+                    use(xlink:href="assets/images/sprite/sprite.svg#vk")
+              li.socials__item
+                a(href="https://github.com/Glacialix").socials__link
+                  svg.socials__icon
+                    use(xlink:href="assets/images/sprite/sprite.svg#github")
+              li.socials__item
+                a(href="").socials__link
+                  svg.socials__icon
+                    use(xlink:href="assets/images/sprite/sprite.svg#in")
+        .auth__buttons-row
+          a.auth__btn.auth__to-my-works(href="./my-works") Мои работы
+          a.auth__btn.auth__to-about(href="./about") Обо мне
+          a.auth__btn.auth__to-blog(href="./blog") Блог
+      .intro__flip.intro__flip--back
+        .auth
+          .auth__title Авторизуйтесь
+          .auth__form-block
+            form.auth__form
+              label.auth__input-label
+                .auth__icon
+                  svg.auth__image
+                    use(xlink:href="assets/images/sprite/sprite.svg#login")
+                input(type="text" placeholder="Логин").auth__input
+              label.auth__input-label
+                .auth__icon
+                  svg.auth__image
+                    use(xlink:href="assets/images/sprite/sprite.svg#password")
+                input(type="password" placeholder="Пароль").auth__input
+              label.auth__check
+                input(type="checkbox").auth__checkbox
+                .auth__checkbox-fake
+                .auth__checkbox-name Я человек
+              .auth__question Вы точно не робот?
+              .auth__radio-container
+                label.auth__radio-label
+                  input(type="radio" name="radio" id="radio").auth__radio
+                  .auth__radio-fake
+                  .auth__radio-name Да
+                label.auth__radio-label
+                  input(type="radio" name="radio" id="radio").auth__radio
+                  .auth__radio-fake
+                  .auth__radio-name Не уверен
+        .auth__buttons-row
+          a.auth__btn.auth__to-main(href="./about.html") На главную
+          a.auth__btn.auth__login Войти
+        
+    footer.intro__footer © Клименко Иван | создано с любовью в LoftSchool | 2017

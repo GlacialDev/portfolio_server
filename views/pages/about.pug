@@ -1,0 +1,140 @@
+extends ../template
+
+block variables
+  - var isBlog = false
+
+block content
+  .wrapper
+    include ../common/header
+    section.about
+      .about__top-frame
+        svg.frame-svg.frame-svg--left.frame-svg--about
+          use(xlink:href="assets/images/sprite/sprite.svg#about_bg_left")
+        svg.frame-svg.frame-svg--right.frame-svg--about
+          use(xlink:href="assets/images/sprite/sprite.svg#about_bg_right")
+      .about__column.about__column--left
+        .about__title Обо мне
+          .about__title-svg
+            svg.about__title-image
+              use(xlink:href="assets/images/sprite/sprite.svg#about_header")
+        .about__profile
+          .about__image
+          .about__subtitle Кто я
+          .about__text
+            p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+      .about__column.about__column--right
+        .about__my-skills
+          .about__subtitle Чем я могу быть вам полезен
+          .about__text 
+            p Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+          .about__skills-container
+            .about__small-title Frontend
+            ul.about__list
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-90
+                </svg>
+                span.circle__title HTML5
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-80
+                </svg>
+                span.circle__title CSS3
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-45
+                </svg>
+                span.circle__title JavaScript &amp; JQuery
+            .about__small-title Backend
+            ul.about__list
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-10
+                </svg>
+                span.circle__title PHP
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-00
+                </svg>
+                span.circle__title mySQL
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-10
+                </svg>
+                span.circle__title Node.js &amp; npm
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-05
+                </svg>
+                span.circle__title Mongo.db
+            .about__small-title Workflow
+            ul.about__list
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-60
+                </svg>
+                span.circle__title Git
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-40
+                </svg>
+                span.circle__title Gulp
+              li.about__item
+                svg(viewBox="0 0 110 110").circles
+                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-05
+                </svg>
+                span.circle__title Bower
+    .contacts.contacts--phone
+          .contacts__subtitle Контакты
+          ul.contacts__list
+            li.contacts__item
+              svg.contacts__image
+                use(xlink:href="assets/images/sprite/sprite.svg#skype")
+              a(href="skype:skype_kdn").contacts__text skype_kdn
+            li.contacts__item
+              svg.contacts__image
+                use(xlink:href="assets/images/sprite/sprite.svg#envelope2")
+              a(href="mailto:astahov@gmail.com").contacts__text astahov@gmail.com
+            li.contacts__item
+              svg.contacts__image
+                use(xlink:href="assets/images/sprite/sprite.svg#phone")
+              a(href="skype:+79312009324?call").contacts__text +7 931 200 93 24
+            li.contacts__item
+              svg.contacts__image
+                use(xlink:href="assets/images/sprite/sprite.svg#map_marker")
+              span.contacts__text Новосибирск, ул. Инская, д.14
+      
+    section.map
+      .map__container  
+        .contacts
+          .contacts__subtitle Контакты
+          ul.contacts__list
+            li.contacts__item
+              svg.contacts__image
+                use(xlink:href="assets/images/sprite/sprite.svg#skype")
+              a(href="skype:iri_on").contacts__text iri_on
+            li.contacts__item
+              svg.contacts__image
+                use(xlink:href="assets/images/sprite/sprite.svg#envelope2")
+              a(href="mailto:KlimenkoIV@yandex.ru").contacts__text KlimenkoIV@yandex.ru
+            li.contacts__item
+              svg.contacts__image
+                use(xlink:href="assets/images/sprite/sprite.svg#phone")
+              a(href="skype:+79811853751?call").contacts__text +7 981 185 37 51
+            li.contacts__item
+              svg.contacts__image
+                use(xlink:href="assets/images/sprite/sprite.svg#map_marker")
+              a(target="_blank" href="https://www.google.com/maps/place/59%C2%B056'30.1%22N+30%C2%B012'35.0%22E/@59.941685,30.2075293,17z/data=!3m1!4b1!4m6!3m5!1s0x0:0x0!7e2!8m2!3d59.9416853!4d30.2097182?hl=ru-RU").contacts__text Санкт-Петербург, Морская наб. 15к3
+        #map
+    include ../common/footer

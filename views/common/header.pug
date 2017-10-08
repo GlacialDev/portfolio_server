@@ -1,0 +1,56 @@
+section.header
+  .hamburger-menu
+    .container--hamburger-menu
+      nav.hamburger-menu__nav-menu
+        ul.hamburger-menu__nav-list
+          li.hamburger-menu__nav-item
+            a.hamburger-menu__nav-link(href="./my-works") Мои работы
+          li.hamburger-menu__nav-item
+            a.hamburger-menu__nav-link(href="./about") Обо мне
+          li.hamburger-menu__nav-item
+            a.hamburger-menu__nav-link(href="./blog") Блог
+          li.hamburger-menu__nav-item
+            a.hamburger-menu__nav-link(href="./") Авторизация
+
+  .header__container
+    canvas.header__canvas
+    
+    if !isBlog
+      svg.header__background-text
+        use(xlink:href="assets/images/sprite/sprite.svg#portfolio_header")
+    else
+      svg.header__background-text
+        use(xlink:href="assets/images/sprite/sprite.svg#blog_header")
+
+    .header__nav
+      .header__socials.socials
+        ul.socials__list
+          li.socials__item
+            a(href="https://vk.com/kleverion").socials__link
+              svg.socials__icon
+                use(xlink:href="assets/images/sprite/sprite.svg#vk")
+          li.socials__item
+            a(href="https://github.com/Glacialix").socials__link
+              svg.socials__icon
+                use(xlink:href="assets/images/sprite/sprite.svg#github")
+          li.socials__item
+            a(href="").socials__link
+              svg.socials__icon
+                use(xlink:href="assets/images/sprite/sprite.svg#in")
+      a.header__menu
+        .header__hamburger-menu
+    .header__who
+      .profile
+        .profile__image
+
+        if !isBlog
+          .profile__name Клименко Иван
+          .profile__desc Личный сайт веб разработчика
+        else
+          .profile__title Блог
+          .profile__desc Статьи, которые я написал
+    .header__arrow
+      .arrow
+        a.arrow__link
+          svg.arrow__icon
+            use(xlink:href="assets/images/sprite/sprite.svg#portf_arrow_down")

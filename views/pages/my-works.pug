@@ -1,0 +1,83 @@
+extends ../template
+
+block variables
+  - var isBlog = false
+
+block content
+  .wrapper.works
+    include ../common/header
+    .works__title Мои работы
+      .works__title-svg
+        svg.works__title-image
+          use(xlink:href="assets/images/sprite/sprite.svg#works_header")
+      svg.frame-svg.frame-svg--left.frame-svg--works
+        use(xlink:href="assets/images/sprite/sprite.svg#about_bg_left")
+      svg.frame-svg.frame-svg--right.frame-svg--works
+        use(xlink:href="assets/images/sprite/sprite.svg#about_bg_right")
+    .works__content
+      .works__column.works__column--left
+        .about-loft
+          .about-loft__title Сайт школы онлайн образования
+          .about-loft__techs HTML, CSS, JavaScript
+          a.about-loft__button
+            svg.about-loft__svg
+              use(xlink:href="assets/images/sprite/sprite.svg#link")
+            .about-loft__text Посмотреть сайт
+      .works__column.works__column--right
+        .slider
+          .slider__top(style="background-image: url(assets/images/works/slides/slide1.jpg)")
+          .about-loft.about-loft--tablets
+            .about-loft__title Сайт школы онлайн образования
+            .about-loft__techs HTML, CSS, JavaScript
+            a.about-loft__button
+              svg.about-loft__svg
+                use(xlink:href="assets/images/sprite/sprite.svg#link")
+              .about-loft__text Посмотреть сайт
+          .slider__bottom
+            .slider__bottom-left(style="background-image: url(assets/images/works/slides/slide0.png);")
+              a(href='').slider__btn
+                svg.slider__svg
+                  use(xlink:href="assets/images/sprite/sprite.svg#portf_arrow_down")
+            .slider__bottom-right(style="background-image: url(assets/images/works/slides/slide2.jpg);")
+              a(href='').slider__btn
+                svg.slider__svg
+                  use(xlink:href="assets/images/sprite/sprite.svg#portf_arrow_up")
+    .works__feedback
+      .feedback
+        .feedback__title Что обо мне говорят
+          .feedback__title-svg
+            svg.feedback__title-image
+              use(xlink:href="assets/images/sprite/sprite.svg#about_header")
+        ul.feedback__list
+          li.feedback__item
+            .feedback__item-svg
+              svg.feedback__svg-image
+                use(xlink:href="assets/images/sprite/sprite.svg#link")
+            .feedback__image.feedback__image--1
+            .feedback__desc Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .feedback__name Ковальчук Дмитрий
+            .feedback__who - основатель Loftschool
+          li.feedback__item
+            .feedback__item-svg
+              svg.feedback__svg-image
+                use(xlink:href="assets/images/sprite/sprite.svg#link")
+            .feedback__image.feedback__image--2
+            .feedback__desc Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+            .feedback__name Сабанцев Владимир
+            .feedback__who - преподаватель
+        .feedback__form-contaner
+          .feedback__form-block
+            form.feedback__form
+              .feedback__form-title Связаться со мной
+              .feedback__inputs
+                input(type="text" placeholder="Имя").feedback__input
+                input(type="text" placeholder="Email").feedback__input
+                textarea(placeholder="Ваше сообщение").feedback__input.feedback__input--textarea
+          .feedback__buttons-row
+            a.feedback__to-main-btn Отправить
+            a.feedback__login-btn Очистить
+        .arrow
+          a(href="").arrow__link-b.arrow__link--feedback
+            svg.arrow__icon
+              use(xlink:href="assets/images/sprite/sprite.svg#portf_arrow_up")
+      include ../common/footer
