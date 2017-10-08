@@ -7,14 +7,14 @@ BlogSchema = new Schema({
     type: String,
     required: [true, 'Укажите заголовок статьи']
   },
-  body: {
-    type: String,
-    required: [true, 'Укажите содержимое статьи']
-  },
   date: {
     type: Date,
     default: Date.now,
     required: [true, 'Укажите дату публикации']
+  },
+  content: {
+    type: String,
+    required: [true, 'Укажите содержимое статьи']
   }
 });
 
