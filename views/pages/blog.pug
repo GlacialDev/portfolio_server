@@ -19,9 +19,16 @@ block content
           .articles__left-col
           .articles__right-col
             ul.articles__list
-              li.articles__item 
-                .articles__title Lorem ipsum dolor.
-                .articles__date 22 ноября 2016
-                .articles__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto blanditiis saepe, tenetur veniam, cupiditate distinctio voluptatum assumenda debitis enim aliquam hic natus quisquam! Ullam veritatis est illo repellat fugit animi ut nemo minima reiciendis, libero ea, dolores officia architecto! Adipisci accusantium tempore molestias officiis eos itaque similique dolore temporibus.
+              each index in blogs
+                li.articles__item 
+                  .articles__title= index.title
+                    - 
+                      var date = new Date(index.date).toLocaleDateString('ru', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit'
+                      })
+                  .articles__date= date
+                  .articles__text= index.content
 
     include ../common/footer

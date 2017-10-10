@@ -31,70 +31,34 @@ block content
           .about__skills-container
             .about__small-title Frontend
             ul.about__list
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-90
-                </svg>
-                span.circle__title HTML5
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-80
-                </svg>
-                span.circle__title CSS3
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-45
-                </svg>
-                span.circle__title JavaScript &amp; JQuery
+              each index in skills
+                if (index.type === "frontend")
+                  li.about__item
+                    svg(viewBox="0 0 110 110").circles
+                      circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                      circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class=`circle__second circle-${index.percent}`)
+                    </svg>
+                    span.circle__title= index.name    
             .about__small-title Backend
             ul.about__list
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-10
-                </svg>
-                span.circle__title PHP
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-00
-                </svg>
-                span.circle__title mySQL
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-10
-                </svg>
-                span.circle__title Node.js &amp; npm
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-05
-                </svg>
-                span.circle__title Mongo.db
+              each index in skills
+                if (index.type === "backend")
+                  li.about__item
+                    svg(viewBox="0 0 110 110").circles
+                      circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                      circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class=`circle__second circle-${index.percent}`)
+                    </svg>
+                    span.circle__title= index.name                   
             .about__small-title Workflow
             ul.about__list
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-60
-                </svg>
-                span.circle__title Git
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-40
-                </svg>
-                span.circle__title Gulp
-              li.about__item
-                svg(viewBox="0 0 110 110").circles
-                  circle(r="45" cx="50%" cy="50%" fill="none").circle__first
-                  circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").circle__second.circle-05
-                </svg>
-                span.circle__title Bower
+                each index in skills
+                  if (index.type === "workflow")
+                    li.about__item
+                      svg(viewBox="0 0 110 110").circles
+                        circle(r="45" cx="50%" cy="50%" fill="none").circle__first
+                        circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class=`circle__second circle-${index.percent}`)
+                      </svg>
+                      span.circle__title= index.name
     .contacts.contacts--phone
           .contacts__subtitle Контакты
           ul.contacts__list

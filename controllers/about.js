@@ -1,3 +1,18 @@
+const http = require('request');
+  
+const apiOptions = {
+  server: 'http://localhost:3000/'
+}
+
 module.exports.getAbout = function(req, res) {
-  res.render('pages/about', { title: 'Обо мне' });
+  const pathAPI = 'api/skill';
+  const requestOptions = {
+    url: apiOptions.server + pathAPI,
+    method: 'GET',
+    json: {}
+  }
+  const sendObj = { title: 'Обо мне'}
+  http(requestOptions, function(error, response, body) {
+    res.render('pages/about', Object.assign(body, sendObj));
+  })
 }
