@@ -1,0 +1,11 @@
+.panel__title Страница «Блог»
+.panel__subtitle Добавить запись
+if (msgblog)
+  .status
+    .status__text= msgblog
+    button.panel__button.panel__button--close Закрыть
+form.panel__form.panel__form--blog(action='/admin-blog' method="POST" enctype="application/x-www-form-urlencoded")
+  input.panel__input.panel__blog-title(type="text" name="title" placeholder="Название")
+  input.panel__input.panel__blog-date(type="date" name="date")
+  textarea.panel__input.panel__blog-content(placeholder="Содержание" name="content")
+  input(name="" type="submit" value="Добавить").panel__button

@@ -1,0 +1,22 @@
+extends ../template
+
+block content
+  .wrapper.admin
+    .admin__header
+      .admin__title Панель администрирования
+      a(href="/").admin__back-btn Вернуться на сайт
+    .admin__nav-menu
+      ul.admin__nav-list
+        li.admin__nav-item
+          a(href="/admin-about").admin__nav-btn Обо мне
+        li.admin__nav-item
+          a(href="/admin-blog").admin__nav-btn Блог
+        li.admin__nav-item
+          a(href="/admin-my-works").admin__nav-btn Мои работы
+    .panel
+      if (adress === 'about')
+        include ../admin/about
+      if (adress === 'blog')
+        include ../admin/blog
+      if (adress === 'my-works')
+        include ../admin/my-works

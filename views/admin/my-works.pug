@@ -1,0 +1,10 @@
+.panel__title Страница «Мои работы»
+.panel__subtitle Добавить работу
+form.panel__form.panel__form--works(action="post")
+  input.panel__input.panel__works-title(type="text" placeholder="Название")
+  input.panel__input.panel__works-techs(type="text" placeholder="Технологии")
+  label.panel__upload-img
+    .panel__upload-icon
+    .panel__upload-text Загрузить картинку
+    input.panel__upload-input(type="file" formenctype="multipart/form-data")
+button(type="submit").panel__button Добавить

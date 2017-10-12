@@ -1,0 +1,54 @@
+.panel__title Страница «Обо мне»
+ul.panel__category-list
+  li.panel__category-item
+    .panel__subtitle Frontend
+    form.panel__form.panel__form--skills(action='/admin-about' method="POST" enctype="application/x-www-form-urlencoded")
+      input(type="text" name="name").panel__input.panel__input--skillname
+      input(type="number" name="percent" maxlength="3").panel__input.panel__input--percent
+      input(type="text" name="type" value="frontend").panel__input.panel__input--hidden
+      input(name="" type="submit" value="Создать").panel__button.panel__button--create
+    ul.panel__skill-list
+      each index in skills
+        if (index.type === "frontend")
+          li.panel__skill-item
+            label.panel__skill-label
+              button(name="id" type="submit" value=index._id).panel__skill-remove -
+              .panel__skill-name= index.name
+              input(type="number" maxlength="3" value=`${index.percent}`).panel__input.panel__input--percent
+              span.panel__dimension %
+      
+  li.panel__category-item
+    .panel__subtitle Backend
+    form.panel__form.panel__form--skills(action='/admin-about' method="POST" enctype="application/x-www-form-urlencoded")
+      input(type="text" name="name").panel__input.panel__input--skillname
+      input(type="number" name="percent" maxlength="3").panel__input.panel__input--percent
+      input(type="text" name="type" value="backend").panel__input.panel__input--hidden
+      input(name="" type="submit" value="Создать").panel__button.panel__button--create
+    ul.panel__skill-list
+      each index in skills
+        if (index.type === "backend")
+          li.panel__skill-item
+            label.panel__skill-label
+              button.panel__skill-remove -
+              .panel__skill-name= index.name
+              input(type="number" maxlength="3" value=`${index.percent}`).panel__input.panel__input--percent
+              span.panel__dimension %
+      
+  li.panel__category-item
+    .panel__subtitle Workflow
+    form.panel__form.panel__form--skills(action='/admin-about' method="POST" enctype="application/x-www-form-urlencoded")
+      input(type="text" name="name").panel__input.panel__input--skillname
+      input(type="number" name="percent" maxlength="3").panel__input.panel__input--percent
+      input(type="text" name="type" value="workflow").panel__input.panel__input--hidden
+      input(name="" type="submit" value="Создать").panel__button.panel__button--create
+    ul.panel__skill-list
+      each index in skills
+        if (index.type === "workflow")
+          li.panel__skill-item
+            label.panel__skill-label
+              button.panel__skill-remove -
+              .panel__skill-name= index.name
+              input(type="number" maxlength="3" value=`${index.percent}`).panel__input.panel__input--percent
+              span.panel__dimension %
+      
+button(type="submit").panel__button Сохранить

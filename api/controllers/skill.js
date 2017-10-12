@@ -19,6 +19,24 @@ module.exports.getSkills = function(req, res) {
   })
 };
 
+module.exports.deleteSkills = function(req, res) {
+  const id = req.query.id;
+  const model = mongoose.model('skill');
+
+  model
+    .findByIdAndRemove(id)
+    .then((item) => {
+      if(!!item) {
+        res.status(200).json({status: 'удалено'});
+      } else {
+        res.status(404).json({status: 'не нашло запись'});
+      }
+    }, (err) => {
+      res.status(404).json({status: 'произошла ошибка удаления' + err});
+    });
+};
+
+
 module.exports.createSkills = function(req, res) {
   const model = mongoose.model('skill');
 
@@ -64,22 +82,5 @@ module.exports.editSkills = function(req, res) {
       }
     }, (err) => {
         res.status(404).json({status: 'произошла ошибка обновления' + err});
-    });
-};
-
-module.exports.deleteSkills = function(req, res) {
-  const id = req.params.id;
-  const model = mongoose.model('skill');
-
-  model
-    .findByIdAndRemove(id)
-    .then((item) => {
-      if(!!item) {
-        res.status(200).json({status: 'удалено'});
-      } else {
-        res.status(404).json({status: 'не нашло запись'});
-      }
-    }, (err) => {
-      res.status(404).json({status: 'произошла ошибка удаления' + err});
     });
 };
