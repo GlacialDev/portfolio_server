@@ -17,9 +17,11 @@ module.exports.addSlides = function(req, res) {
   let upload ='public/upload/slider';
   let fileName = path.join(upload, 'avatar.jpg');
 
+
   form.uploadDir = path.join(process.cwd(), upload);
-  // console.log(form);
+  // console.log(form.uploadDir);
   form.parse(req, function(err, fields, files) {
+    // console.log("parsing done");
     // console.log(res);
     if(err) return res.redirect('/admin-my-works');
 
@@ -45,7 +47,7 @@ module.exports.addSlides = function(req, res) {
         url: apiOptions.server + pathApi,
         method: 'POST',
         json: {
-          name: fields.name,
+          name: files.photo.name,
           techs: fields.techs
         } 
       };
