@@ -15,4 +15,9 @@ router.get('/delete/skill', ctrlSkill.deleteSkills);
 router.post('/add/skill', ctrlSkill.createSkills);
 router.put('/skill/:id', ctrlSkill.editSkills);
 
+const ctrlSlide = require('../controllers/slide');
+
+router.get('/get/slide', ctrlSlide.getSlides);
+router.post('/add/slide', ctrlSlide.addSlides);
+
 module.exports = router;

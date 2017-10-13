@@ -41,3 +41,4 @@ process.on('SIGINT', function() {
 
 require('./skill');
 require('./blog');
+require('./slide');

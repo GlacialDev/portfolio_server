@@ -22,6 +22,7 @@ router.post('/admin-about', ctrlAdminAbout.addSkill);
 router.delete('/admin-about', ctrlAdminAbout.removeSkill);
 
 router.get('/admin-my-works', ctrlAdminMyWorks.getAdminMyWorks);
+router.post('/admin-my-works', ctrlAdminMyWorks.addSlides);
 
 router.get('/admin-blog', ctrlAdminBlog.getAdminBlog);
 router.post('/admin-blog', ctrlAdminBlog.postArticle);
